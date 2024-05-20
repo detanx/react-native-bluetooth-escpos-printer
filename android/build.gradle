@@ -1,0 +1,60 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        google()
+        maven {url "https://repo.spring.io/plugins-snapshot/"}
+        mavenCentral()
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../node_modules/react-native/android"
+        }
+        maven {
+            url 'https://maven.google.com'
+        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.4'
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 34
+    buildToolsVersion "34.0.0"
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+    }
+    lintOptions {
+        abortOnError false
+    }
+    sourceSets {
+        main {
+            aidl.srcDirs = ['src/main/java']
+        }
+    }
+}
+
+repositories {
+    maven {url "https://repo.spring.io/plugins-snapshot/"}
+    mavenCentral()
+    maven {
+        // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+        url "$rootDir/../node_modules/react-native/android"
+    }
+    maven {
+        url 'https://maven.google.com'
+    }
+}
+
+dependencies {
+    // compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.facebook.react:react-native:+'  // From node_modules
+    implementation group: 'com.android.support', name: 'support-v4', version: '27.0.0'
+    implementation "com.google.zxing:core:3.3.0"
+}
