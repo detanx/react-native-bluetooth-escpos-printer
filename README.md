@@ -50,6 +50,16 @@ project(':react-native-bluetooth-escpos-printer').projectDir = new File(rootProj
 + import cn.jystudio.bluetooth.RNBluetoothEscposPrinterPackage
 import android.app.Application
 ...
+```
+6. android\app\src\main\AndroidManifest.xml 添加权限
+```md
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+  <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+  <uses-permission android:name="android.permission.BLUETOOTH" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+  <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+```
 ### Example
 - Some dependency versions used.
 ```md
