@@ -51,7 +51,7 @@ project(':react-native-bluetooth-escpos-printer').projectDir = new File(rootProj
 import android.app.Application
 ...
 ```
-6. android\app\src\main\AndroidManifest.xml 添加权限
+6. android\app\src\main\AndroidManifest.xml, add the following code:
 ```md
   <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
   <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
